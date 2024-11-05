@@ -62,7 +62,7 @@ export function ArticleForm({ slug = null }: { slug?: Article['slug'] | null }) 
     if (!isLoged) {
       navigate('/login');
     }
-  }, [isLoged, navigate]);
+  }, [isLoged, token, navigate]);
 
   if (isLoading) {
     return <p>Loading...</p>;

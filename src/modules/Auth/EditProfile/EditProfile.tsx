@@ -19,7 +19,7 @@ export function EditProfile() {
     if (!isLoged) {
       navigate('/');
     }
-  }, [isLoged]);
+  }, [isLoged, token, navigate]);
 
   const editUserMutation = useMutation({
     mutationFn: editUser,

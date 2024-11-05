@@ -36,7 +36,7 @@ export function CreateArticle() {
     if (!isLoged) {
       navigate('/login');
     }
-  }, [isLoged, token]);
+  }, [isLoged, token, navigate]);
 
   return (
     <article className={css.article}>

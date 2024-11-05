@@ -3,11 +3,8 @@ import React from 'react';
 
 import { Layout } from 'app/layout/';
 import { Fallback } from 'shared/ui/Fallback';
-import { useGetUserLocalData } from 'shared/hooks';
 
 export function AppRouter() {
-  const { isLoged } = useGetUserLocalData();
-
   const routers = createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Navigate to="/articles/1" replace />} />
@@ -35,10 +32,6 @@ export function AppRouter() {
       <Route
         path="/profile"
         lazy={async () => {
-          if (!isLoged) {
-            const m = await import('pages/LogInPage');
-            return { Component: m.LogInPage };
-          }
           const m = await import('pages/EditProfilePage');
           return { Component: m.EditProfilePage };
         }}
@@ -61,10 +54,6 @@ export function AppRouter() {
       <Route
         path="/create-article"
         lazy={async () => {
-          if (!isLoged) {
-            const m = await import('pages/LogInPage');
-            return { Component: m.LogInPage };
-          }
           const m = await import('pages/CreateArticlePage');
           return { Component: m.CreateArticlePage };
         }}

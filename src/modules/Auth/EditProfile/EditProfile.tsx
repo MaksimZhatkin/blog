@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Form, Input, Button } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Form, Input, Button, Alert } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 
@@ -12,8 +12,9 @@ import * as css from './styles.module.css';
 export function EditProfile() {
   const [form] = Form.useForm();
   const navigate = useNavigate();
+  const [serverErrors, setServerErrors] = useState<string | null>(null);
 
-  const { token, username, email, isLoged } = useGetUserLocalData();
+  const { token, username, email, isLoged, image } = useGetUserLocalData();
 
   useEffect(() => {
     if (!isLoged) {
@@ -27,20 +28,24 @@ export function EditProfile() {
       localStorage.setItem('user-email', user.email);
       localStorage.setItem('user-username', user.username);
       localStorage.setItem('user-token', user.token);
+      localStorage.setItem('user-image', user.image);
 
       navigate('/profile');
     },
 
     onError: (error: UserEditErrorDTO) => {
-      const fieldErrors = Object.entries(error.errors).map(([field, message]) => ({
-        name: field,
-        errors: [message],
-      }));
-      form.setFields(fieldErrors);
+      const errorMessage = error.errors
+        ? Object.entries(error.errors)
+            .map(([key, value]) => `${key} ${value}`)
+            .join('. ')
+        : 'An unknown error occurred';
+      setServerErrors(errorMessage);
     },
   });
 
   const onFinish = (values: UserEditResponseDTO['user']) => {
+    setServerErrors(null);
+
     const responseVal = { user: values, token };
     editUserMutation.mutate(responseVal);
   };
@@ -48,7 +53,7 @@ export function EditProfile() {
   return (
     <div className={css.modal}>
       <h2 className={css.header}>Edit profile&apos;s data</h2>
-
+      {serverErrors && <Alert message="Registration Error" description={serverErrors} type="error" showIcon />}
       <Form
         form={form}
         name="signup"
@@ -58,6 +63,7 @@ export function EditProfile() {
         initialValues={{
           username: username ?? undefined,
           email: email ?? undefined,
+          image: image ?? undefined,
         }}
       >
         {/* Username */}

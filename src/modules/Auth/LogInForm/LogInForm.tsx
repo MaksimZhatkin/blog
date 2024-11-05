@@ -18,7 +18,7 @@ export function LogInForm() {
 
       localStorage.setItem('user-email', email);
       localStorage.setItem('user-username', username);
-      localStorage.setItem('user-token', token);
+      localStorage.setItem('user-token', JSON.stringify(token));
       localStorage.setItem('user-image', image);
 
       navigate('/');

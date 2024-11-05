@@ -1,0 +1,7 @@
+node_modules
+.vscode
+public/main**
+public/img/**git
+public/** 
+bundle-report.html
+.vercel

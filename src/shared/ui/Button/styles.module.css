@@ -1,0 +1,98 @@
+/* default styles */
+.button {
+  color: var(--clr-control-text-default);
+  font-size: 1.8rem;
+  border: var(--bdr-thickness-default) solid var(--clr-control-stroke-default);
+  border-radius: var(--bdr-radius-default);
+  background-color: var(--clr-control-fill-default);
+  padding: var(--sp-xxs);
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    opacity 0.2s,
+    background 0.2s;
+}
+
+.button:focus {
+  outline: var(--outl-color) solid var(--outl-thickness);
+}
+.button:hover {
+  opacity: 0.8;
+}
+
+/* stroke styles */
+.stroke_none {
+  border: none;
+}
+
+.stroke_success {
+  border-color: var(--clr-control-stroke-success);
+}
+
+.stroke_error {
+  border-color: var(--clr-control-stroke-error);
+}
+
+.stroke_primary {
+  border-color: var(--clr-control-stroke-primary);
+}
+
+/* fill styles */
+.fill_none {
+  background-color: transparent;
+}
+
+.fill_success {
+  background-color: var(--clr-control-fill-success);
+}
+
+.fill_error {
+  background-color: var(--clr-control-fill-error);
+}
+
+.fill_primary {
+  background-color: var(--clr-control-fill-primary);
+}
+
+/* text styles */
+.text_none {
+  color: var(--clr-text-default);
+}
+
+.text_success {
+  color: var(--clr-text-success);
+}
+
+.text_error {
+  color: var(--clr-text-error);
+}
+
+.text_primary {
+  color: var(--clr-text-primary);
+}
+
+/* hover state binded with text color or fill color*/
+
+.text_none:hover {
+  opacity: 1;
+  color: var(--clr-control-text-default);
+  background-color: var(--clr-control-fill-default);
+}
+
+.text_success:hover {
+  opacity: 1;
+  color: var(--clr-control-text-default);
+  background-color: var(--clr-control-fill-success);
+}
+
+.text_error:hover {
+  opacity: 1;
+  color: var(--clr-control-text-default);
+  background-color: var(--clr-control-fill-error);
+}
+
+.text_primary:hover {
+  opacity: 1;
+  color: var(--clr-control-text-default);
+  background-color: var(--clr-control-fill-primary);
+}

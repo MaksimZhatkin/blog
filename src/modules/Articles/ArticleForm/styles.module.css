@@ -1,0 +1,27 @@
+.article {
+  background-color: var(--clr-bg-primary);
+  padding: var(--sp-lg);
+  box-shadow: var(--sdw-default);
+  border-radius: var(--bdr-radius-default);
+}
+
+.title {
+  margin-block-start: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 140%;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.submit_button {
+  width: 50%;
+}
+
+.tag_label {
+  margin-block-end: var(--sp-xxs);
+}

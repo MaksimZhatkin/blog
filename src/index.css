@@ -1,0 +1,131 @@
+/* Normalize */
+html {
+  font-size: 62.5%;
+  color: var(--clr-text-default);
+  font-family:
+    'Open Sans',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #f3f7fa;
+  min-height: 101vh;
+}
+
+body {
+  margin: 0;
+  padding-block-end: 50px;
+}
+
+/* Container */
+body > main {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'pagination';
+  gap: 24px;
+  margin: 0 auto;
+}
+
+/* Box Model */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  line-height: inherit;
+  display: inline-flex;
+}
+
+/* Variables */
+
+/* Colors */
+
+html {
+  /* initial */
+  --clr-white: 255 255 255;
+  --clr-lighter: 235 238 243;
+  --clr-light: 191 191 191;
+  --clr-dark: 128 128 128;
+  --clr-darker: 59 60 61;
+  --clr-darkest: 64 64 64;
+  --clr-sky-blue: 24 144 255;
+
+  --clr-success: 82 196 26;
+  --clr-error: 245 34 45;
+  --clr-warn: 250 173 20;
+
+  /* backgrounds */
+  --clr-bg-primary: rgb(var(--clr-white));
+  --clr-bg-secondary: rgb(var(--clr-lighter));
+
+  /* text */
+  --clr-text-default: rgb(var(--clr-darkest));
+  --clr-text-primary: rgb(var(--clr-sky-blue));
+  --clr-text-inverted: rgb(var(--clr-white));
+  --clr-text-disabled: rgb(var(--clr-dark));
+  --clr-text-error: rgb(var(--clr-error));
+  --clr-text-success: rgb(var(--clr-success));
+
+  /* shadow */
+  --sdw-default: 0 4px 12px 0 rgb(0 0 0 / 15%);
+
+  /* controls */
+
+  --clr-control-stroke-primary: rgb(var(--clr-sky-blue));
+  --clr-control-fill-primary: rgb(var(--clr-sky-blue));
+  --clr-control-text-primary: var(--clr-text-inverted);
+
+  --clr-control-stroke-success: rgb(var(--clr-success));
+  --clr-control-fill-success: rgb(var(--clr-success));
+  --clr-control-text-success: var(--clr-text-inverted);
+
+  --clr-control-stroke-error: rgb(var(--clr-error));
+  --clr-control-fill-error: rgb(var(--clr-error));
+  --clr-control-text-error: rgb(var(--clr-text-error));
+
+  --clr-control-stroke-default: rgb(var(--clr-darkest));
+  --clr-control-fill-default: rgb(var(--clr-darkest));
+  --clr-control-text-default: var(--clr-text-inverted);
+
+  /* Layout */
+  --lyt-page-desktop: 144rem;
+  --lyt-content-desktop: 94rem;
+
+  /* Spaces */
+
+  /* with fz = 62.5% => 1rem = 1px */
+  --sp-xxs: 0.8rem;
+  --sp-xs: 1rem;
+  --sp-s: 1.2rem;
+  --sp-m: 1.6rem;
+  --sp-lg: 2rem;
+  --sp-xl: 3.4rem;
+  --sp-xxl: 4.8rem;
+
+  /* Borders */
+  --bdr-thickness-default: 1px;
+  --bdr-radius-default: 0.5rem;
+  --bdr-radius-sm: 2px;
+  --outl-color: rgb(var(--clr-sky-blue));
+  --outl-thickness: 2.5px;
+}

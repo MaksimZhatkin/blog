@@ -1,0 +1,17 @@
+.list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xl);
+}
+
+.list_item {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.pagination {
+  margin: 0 auto;
+}

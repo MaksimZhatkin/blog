@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: var(--clr-bg-primary);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  width: 100%;
+  padding: var(--sp-m);
+}
+
+.title {
+  font-size: 2rem;
+  align-self: center;
+  margin: 0;
+}
+
+.user_panel {
+  display: inline-flex;
+  gap: var(--sp-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.user_panel_item {
+  margin: 0;
+  padding: 0;
+}

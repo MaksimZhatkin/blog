@@ -1,0 +1,26 @@
+.like_btn {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-inline-start: var(--sp-s);
+  background-image: url('data:image/svg+xml,');
+  border: none;
+  background: none;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.like_btn::after {
+  content: attr(data-likes);
+  font-size: 1.2rem;
+}
+
+.like_icon {
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-inline-end: calc(var(--sp-xxs) / 2);
+}
+
+.like_btn[data-fav='true'] > .like_icon {
+  color: rgb(var(--clr-error));
+}

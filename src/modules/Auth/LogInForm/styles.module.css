@@ -1,0 +1,33 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-s);
+  background-color: var(--clr-bg-primary);
+  background-color: var(--clr-bg-primary);
+  padding: var(--sp-m);
+  box-shadow: var(--sdw-default);
+  border-radius: var(--bdr-radius-default);
+
+  max-width: 38.4rem;
+  width: 100%;
+  padding: var(--sp-xxl) var(--sp-xl);
+  margin: 0 auto;
+}
+
+.title {
+  margin-block-start: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 140%;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-s);
+}
+
+.form_item {
+  margin-block-end: 0;
+}

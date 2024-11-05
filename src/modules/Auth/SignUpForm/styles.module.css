@@ -1,0 +1,71 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-s);
+  background-color: var(--clr-bg-primary);
+  background-color: var(--clr-bg-primary);
+  padding: var(--sp-m);
+  box-shadow: var(--sdw-default);
+  border-radius: var(--bdr-radius-default);
+
+  max-width: 38.4rem;
+  padding: var(--sp-xxl) var(--sp-xl);
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 2rem;
+  margin-block-start: 0;
+  font-weight: bold;
+  line-height: 140%;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-s);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: var(--sp-xs) var(--sp-s);
+  font-size: 1.6rem;
+  line-height: 150%;
+
+  border: 1px solid var(--clr-bg-secondary);
+  border-radius: var(--bdr-radius-default);
+  width: 320px;
+  height: 40px;
+}
+
+.input_label {
+  font-weight: bold;
+}
+
+.input_label > div {
+  margin-block-end: 0.2rem;
+}
+
+.divider {
+}
+
+.checkbox {
+}
+
+.checkbox_text {
+}
+
+.checkbox_label {
+  border-top: solid 1px var(--);
+}
+
+.custom_checkbox {
+}
+
+.footer_text {
+}
+
+.footer_link {
+}

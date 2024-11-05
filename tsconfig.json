@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "DOM"
+    ],
+    "target": "ES6",
+    "module": "ESNext",
+    "jsx": "react",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": "src",
+    "paths": {
+      "app/*": [
+        "app/*"
+      ],
+      "entities/*": [
+        "entities/*"
+      ],
+      "features/*": [
+        "features/*"
+      ],
+      "pages/*": [
+        "pages/*"
+      ],
+      "shared/*": [
+        "shared/*"
+      ],
+      "widgets/*": [
+        "widgets/*"
+      ]
+    },
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "Global.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

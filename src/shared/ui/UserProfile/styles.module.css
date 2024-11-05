@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.nickname {
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.avatar_pic {
+  width: 4.6rem;
+  height: 4.6rem;
+  background-image: url('https://static.productionready.io/images/smiley-cyrus.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  border: solid 0px transparent;
+  margin-inline-start: var(--sp-s);
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.add_info {
+  font-size: 1.2rem;
+  color: var(--clr-text-disabled);
+}

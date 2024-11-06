@@ -38,7 +38,11 @@ export function Article({ article }: { article: Article }) {
           <time dateTime={dateOfCreation}>{dateOfCreation}</time>
         </UserProfile>
       </header>
-      <main className={css.article_preview}>{truncate(article.description, 500)}</main>
+      <main className={css.article_preview}>
+        {article.description && article.description.trim() !== ''
+          ? truncate(article.description, 500)
+          : 'No Description'}
+      </main>
     </article>
   );
 }

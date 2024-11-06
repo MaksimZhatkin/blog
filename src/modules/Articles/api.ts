@@ -101,7 +101,7 @@ export const deleteArticle = async ({
 }: {
   token: UserResponseDTO['user']['token'];
   slug: Article['slug'];
-}): Promise<void> => {
+}): Promise<Response> => {
   const response = await fetch(`${BASE_URL}/articles/${slug}`, {
     method: 'DELETE',
     headers: {
@@ -111,10 +111,10 @@ export const deleteArticle = async ({
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to delete article: ${response.status} ${response.statusText}`);
+    throw response;
   }
 
-  return response.json();
+  return response;
 };
 
 export const postArticleFav = async ({
@@ -163,7 +163,7 @@ export const deleteArticleFav = async ({
   return responseData.article;
 };
 
-export const updateArticle = async ({ token, slug, article }: UpdateArticleResponse): Promise<void> => {
+export const updateArticle = async ({ token, slug, article }: UpdateArticleResponse): Promise<Article> => {
   const response = await fetch(`${BASE_URL}/articles/${slug}`, {
     method: 'PUT',
     headers: {

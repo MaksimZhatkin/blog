@@ -26,11 +26,9 @@ export function ArticleFull({ slug = '', isEditingMode = false }: { slug?: Artic
   const mutation = useMutation({
     mutationFn: deleteArticle,
     onSuccess: () => {
-      invalidateAppQuery(['article', article?.slug]);
-      navigate('/');
-    },
-    onError: (e) => {
-      throw new Error(e.message);
+      invalidateAppQuery(['article', 'list', token]);
+      navigate(-1);
+      invalidateAppQuery(['article', slug]);
     },
   });
 
@@ -47,12 +45,9 @@ export function ArticleFull({ slug = '', isEditingMode = false }: { slug?: Artic
   const showDeleteConfirm = () => {
     setIsModalVisible(true);
   };
-  const handleDelete = () => {
-    mutation.mutate({ slug: article?.slug ?? '', token: token ?? '' });
+  const handleDelete = async () => {
+    mutation.mutateAsync({ slug: article?.slug ?? '', token: token ?? '' });
     setIsModalVisible(false);
-    invalidateAppQuery(['article', 'list', token]);
-    invalidateAppQuery(['article', slug]);
-    navigate(-1);
   };
 
   if (!isEditingMode) {

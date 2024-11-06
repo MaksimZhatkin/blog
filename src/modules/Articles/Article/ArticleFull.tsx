@@ -88,7 +88,11 @@ export function ArticleFull({ slug = '', isEditingMode = false }: { slug?: Artic
 
         <section className={css.article_description}>{article.description}</section>
         <main className={css.article_body}>
-          <Markdown options={{ forceBlock: true, wrapper: 'div' }}>{article?.body ?? 'text not found'}</Markdown>
+          {!article.body || article.body.trim() !== '' ? (
+            <Markdown options={{ forceBlock: true, wrapper: 'div' }}>{article?.body ?? 'text not found'}</Markdown>
+          ) : (
+            'Text not found'
+          )}
         </main>
 
         <Modal
